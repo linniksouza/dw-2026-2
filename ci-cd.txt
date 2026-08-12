@@ -1,0 +1,1 @@
+Rotina de integração contínua do projeto.
