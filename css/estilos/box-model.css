@@ -1,0 +1,9 @@
+.caixa {
+    border: 2px solid yellowgreen;
+    /* border-radius: 50%; */
+    /* border-width: 2px;
+    border-color: rgb(64, 65, 61);
+    border-style: solid; */
+    padding: 5px;
+    margin: 10px;
+}
