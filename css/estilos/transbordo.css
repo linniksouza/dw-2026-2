@@ -1,0 +1,8 @@
+.texto {
+    border: 2px solid grey;
+    width: 200px;
+    height: 75px;
+    overflow: scroll;
+    /* overflow-x: hidden;
+    overflow-y: scroll; */
+}

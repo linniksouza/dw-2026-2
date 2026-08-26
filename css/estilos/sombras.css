@@ -1,0 +1,10 @@
+.texto {
+    border: 2px solid black;
+    padding: 5px;
+    /* box-shadow: -4px -4px 2px 2px grey inset; */
+    background-color: cyan;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1vxysvBGSHLS0gKVur57ne7PiA4L1RsuHNAUnnotgg&s=10);
+    background-size: 90px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
