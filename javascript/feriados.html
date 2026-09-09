@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feriados nacionais</title>
+
+    <style>
+        #feriados {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .feriado {
+            border: 2px solid black;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feriados Nacionais</h1>
+
+    <form id="form-buscar-feriados">
+        <label for="ano">Digite um ano</label>
+        <input type="text" name="ano" id="ano">
+        <br>
+        <button type="submit">Buscar</button>
+    </div>
+
+    <div id="feriados"></div>
+
+    <script src="./js/ajax.js"></script>
+</body>
+</html>
