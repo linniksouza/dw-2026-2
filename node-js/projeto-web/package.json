@@ -1,0 +1,28 @@
+{
+  "name": "projeto-web",
+  "version": "1.0.0",
+  "description": "Primeiro projeto web usando Node.js e NPM",
+  "keywords": [
+    "projeto",
+    "web",
+    "nodejs"
+  ],
+  "license": "ISC",
+  "author": "Linnik Souza <linniksouza.prof@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --inspect src/servidor.ts",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.3",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
