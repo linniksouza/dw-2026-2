@@ -1,16 +1,10 @@
-import { Typography } from "@mui/material";
+import { buscarProdutos } from "@/data/api/produtos";
+import { CatalogoProdutosFragment } from "./fragment";
 
-import { PageContainer } from "./page.styles";
+const CatalogoProdutos = async () => {
+    const produtos = await buscarProdutos();
 
-const CatalogoProdutos = () => {
-
-    return (
-        <PageContainer>
-            <Typography>
-                Catálogo de Produtos
-            </Typography>
-        </PageContainer>
-    );
+    return <CatalogoProdutosFragment produtos={produtos} />;
 };
 
 export default CatalogoProdutos;

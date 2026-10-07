@@ -10,6 +10,14 @@ const PageContainer = styled(Box)`
     align-items: center;
 `;
 
+const ContainerCatalogo = styled(Box)`
+    display: flex;
+    flex-direction: row;
+    padding: ${({ theme }) => theme.spacing(3)};
+    gap: ${({ theme }) => theme.spacing(3)};
+`;
+
 export {
+    ContainerCatalogo,
     PageContainer
 };
