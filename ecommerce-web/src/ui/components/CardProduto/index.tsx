@@ -22,7 +22,7 @@ const CardProduto: FC<CardProdutoProps> = ({
         <CardProdutoStyle>
             <CardMedia
                 component="img" height="194"
-                image={produto.urlImagem} alt={produto.nome}
+                image={produto.url_imagem} alt={produto.nome}
             />
 
             <CardProdutoContent>

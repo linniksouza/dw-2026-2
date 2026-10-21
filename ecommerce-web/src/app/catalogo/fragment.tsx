@@ -3,21 +3,23 @@
 import { useMediaQuery, useTheme } from "@mui/material";
 import { FC } from "react";
 
-import { Produto } from "@/models";
+import { CategoriaProduto, Produto } from "@/models";
 import { Cabecalho } from "@/ui/components/Cabecalho";
 import { ListaCategorias } from "@/ui/components/ListaCategorias";
 import { ListaProdutos } from "@/ui/components/ListaProdutos";
 import { ContainerCatalogo } from "./page.styles";
 
 type CatalogoFragmentProps = {
+    categorias: CategoriaProduto[];
     produtos: Produto[];
 };
 
-const CatalogoProdutosFragment: FC<CatalogoFragmentProps> = ({ produtos }) => {
+const CatalogoProdutosFragment: FC<CatalogoFragmentProps> = ({
+    produtos,
+    categorias
+}) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-    const categorias = [...(new Set(produtos.map(p => p.categoria)))];
 
     return (
         <>

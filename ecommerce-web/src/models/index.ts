@@ -14,7 +14,7 @@ interface Produto {
     ean: string;
     nome: string;
     descricao: string;
-    urlImagem: string;
+    url_imagem: string;
     especificacoes: {
         [key: string]: string;
     };
