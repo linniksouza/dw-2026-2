@@ -75,7 +75,7 @@ const DetalhesProdutoFragment: FC<DetalhesProdutoFragmentProps> = ({
                 <ImagemProduto
                     elevation={2}
                     component="img"
-                    src={produto.urlImagem}
+                    src={produto.url_imagem}
                     alt={produto.nome}
                 />
 
