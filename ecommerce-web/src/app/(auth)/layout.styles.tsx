@@ -1,13 +1,11 @@
 "use client";
 
-// src/app/login/page.styles.tsx
 import { Avatar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const PageContainer = styled(Box)`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     ${({ theme }) => theme.breakpoints.up("sm")} {
@@ -35,7 +33,7 @@ const ContainerInfosApp = styled(Box)`
     }
 `;
 
-const ContainerLoginApp = styled(Box)`
+const ContainerAuthApp = styled(Box)`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -60,10 +58,12 @@ const LogoInfoApp = styled(Box)`
         height: 100px;
     }
 ` as typeof Box;
+
 const IconeInfoApp = styled(Avatar)`
     background-color: ${({ theme }) => theme.palette.primary.main};
     padding: ${({ theme }) => theme.spacing(3)};
 `;
+
 const ContainerDica = styled(Box)`
     display: flex;
     flex-direction: row;
@@ -71,43 +71,12 @@ const ContainerDica = styled(Box)`
     gap: ${({ theme }) => theme.spacing(2)};
     margin-top: ${({ theme }) => theme.spacing(3)};
 `;
-const ContainerFormLogin = styled(Box)`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 ${({ theme }) => theme.spacing(2)};
-
-    ${({ theme }) => theme.breakpoints.up("sm")} {
-        width: 50%;
-        padding: 0;
-    }
-`;
-const ContainerAcoesLoginApp = styled(Box)`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 ${({ theme }) => theme.spacing(3)};
-
-    ${({ theme }) => theme.breakpoints.up("sm")} {
-        width: 50%;
-        padding: 0;
-    }
-`;
-const ContainerAcaoCadastroApp = styled(Box)`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
 
 export {
-    ContainerAcaoCadastroApp,
-    ContainerAcoesLoginApp,
+    ContainerAuthApp,
     ContainerDica,
-    ContainerFormLogin,
     ContainerInfosApp,
-    ContainerLoginApp,
     IconeInfoApp,
     LogoInfoApp,
-    PageContainer
+    PageContainer,
 };

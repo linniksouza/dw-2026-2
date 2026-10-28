@@ -20,6 +20,7 @@ services:
         resource: '../src/'
     
     App\Repositorios\CategoriasRepository: '@App\Repositorios\FileJson\FileJsonCategoriasRepository'
+    App\Repositorios\ClientesRepository: '@App\Repositorios\Doctrine\DoctrineClientesRepository'
     App\Repositorios\ProdutosRepository: '@App\Repositorios\FileJson\FileJsonProdutosRepository'
 
     # add more service definitions when explicit configuration is needed
