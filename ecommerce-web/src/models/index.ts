@@ -1,3 +1,12 @@
+interface ViaCepEndereco {
+    cep: string;
+    logradouro: string;
+    complemento: string;
+    bairro: string;
+    localidade: string;
+    uf: string;
+}
+
 interface CategoriaProduto {
     id: string;
     nome: string;
@@ -27,5 +36,6 @@ interface Produto {
 export {
     AvaliacaoProduto,
     CategoriaProduto,
-    Produto
+    Produto,
+    ViaCepEndereco
 };
