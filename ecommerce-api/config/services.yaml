@@ -16,12 +16,26 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
+
+    Symfony\Component\PasswordHasher\PasswordHasherInterface:
+        class: Symfony\Component\PasswordHasher\Hasher\MessageDigestPasswordHasher
+        arguments:
+        - sha256
+        - false
+        - 2500
+
     App\:
         resource: '../src/'
     
     App\Repositorios\CategoriasRepository: '@App\Repositorios\FileJson\FileJsonCategoriasRepository'
     App\Repositorios\ClientesRepository: '@App\Repositorios\Doctrine\DoctrineClientesRepository'
     App\Repositorios\ProdutosRepository: '@App\Repositorios\FileJson\FileJsonProdutosRepository'
+
+    App\Providers\TokenProvider:
+        class: App\Providers\Jwt\JwtTokenProvider
+        arguments:
+        - '%env(JWT_SECRET)%'
+        - '%env(JWT_EXPIRATION)%'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

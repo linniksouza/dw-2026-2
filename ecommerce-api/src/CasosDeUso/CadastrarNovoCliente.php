@@ -9,6 +9,8 @@ use App\Entidades\Cliente;
 use App\Entidades\Endereco;
 use App\Repositorios\ClientesRepository;
 
+use Symfony\Component\PasswordHasher\PasswordHasherInterface;
+
 use DateTime;
 
 final class CadastrarNovoCliente
@@ -16,19 +18,25 @@ final class CadastrarNovoCliente
 
     private readonly ClientesRepository $repository;
 
-    public function __construct(ClientesRepository $repository)
-    {
+    private readonly PasswordHasherInterface $hasher;
+
+    public function __construct(
+        ClientesRepository $repository,
+        PasswordHasherInterface $hasher
+    ) {
         $this->repository = $repository;
+        $this->hasher = $hasher;
     }
 
     public function executar(NovoClienteDto $dto): ClienteDto
     {
+        $senha = $this->hasher->hash($dto->senha);
         $entity = new Cliente(
             cpf: $dto->cpf,
             nome: $dto->nome,
             dataNascimento: DateTime::createFromFormat("Y-m-d", $dto->dataNascimento),
             email: $dto->email,
-            senha: $dto->senha,
+            senha: $senha,
             endereco: new Endereco(
                 cep: $dto->endereco->cep,
                 logradouro: $dto->endereco->logradouro,
