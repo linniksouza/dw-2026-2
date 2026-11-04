@@ -6,14 +6,21 @@ use App\Dto\RedefinirSenhaDto;
 use App\Excecoes\ClienteNaoEncontradoException;
 use App\Repositorios\ClientesRepository;
 
+use Symfony\Component\PasswordHasher\PasswordHasherInterface;
+
 final class RedefinirSenhaCliente
 {
 
     private readonly ClientesRepository $repository;
 
-    public function __construct(ClientesRepository $repository)
-    {
+    private readonly PasswordHasherInterface $hasher;
+
+    public function __construct(
+        ClientesRepository $repository,
+        PasswordHasherInterface $hasher
+    ) {
         $this->repository = $repository;
+        $this->hasher = $hasher;
     }
 
     public function executar(RedefinirSenhaDto $dto): void
@@ -22,7 +29,8 @@ final class RedefinirSenhaCliente
         if($cliente === null)
             throw new ClienteNaoEncontradoException("Não foi encontrado um cliente com o endereço de e-mail '$dto->email'.");
 
-        $cliente->setSenha($dto->novaSenha);
+        $novaSenha = $this->hasher->hash($dto->novaSenha);
+        $cliente->setSenha($novaSenha);
         $this->repository->salvarCliente($cliente);
     }
 }
